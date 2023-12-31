@@ -1,0 +1,48 @@
+{
+  "name": "baxture",
+  "version": "1.0.0",
+  "description": "baxture is a service-based company",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "start:prod": "npm run build && node server.js",
+    "start:multi": "node start-multi.js",
+    "test": "nyc mocha",
+    "build": "tsc"
+  },
+  "author": "kashif",
+  "license": "ISC",
+  "dependencies": {
+    "chai-http": "^4.4.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "figlet": "^1.7.0",
+    "helmet": "^7.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "save-dev": "^0.0.1-security",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "chai": "^5.0.0",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.2",
+    "nyc": "^15.1.0",
+    "typescript": "^4.5.5"
+  },
+  "nyc": {
+    "report-dir": "coverage",
+    "reporter": [
+      "text",
+      "lcov",
+      "html"
+    ]
+  
+  }
+}
