@@ -38,10 +38,7 @@ exports.getAlluser = async(req, res)=>{
 }
 
 exports.get_single = async(req, res)=>{
-  const validUUID = /^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{11}$/;
-  if (!validUUID.test(userId)) {
-    return res.status(400).json({ message: 'Invalid userId format' });
-  }
+
   let user = await User.findOne({_id: req.params.userid}).select({ username: 1, age: 1, hobbies: 1 });
   if(!user){
     return res.status(400).json({message:"Please provide the valid userid"})
